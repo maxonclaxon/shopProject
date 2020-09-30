@@ -9,7 +9,7 @@ class Center(models.Model):
 
 class Category(models.Model):
     Name = models.CharField(max_length=32)
-    image = models.ImageField(upload_to='images/Categories/{0}/'.format(id))
+    image = models.ImageField(upload_to='static/images/Categories/')
 
 
 class Shop(models.Model):
@@ -17,8 +17,8 @@ class Shop(models.Model):
     Description = models.TextField()
     Floor = models.PositiveIntegerField()
     Phone = models.CharField(max_length=32)
-    ShopCenter = models.ForeignKey(Center, on_delete=models.CASCADE)
-    Categories = models.ManyToManyField(Category)
+    ShopCenter = models.ForeignKey(Center, on_delete=models.CASCADE, related_name='Center')
+    Categories = models.ManyToManyField(Category, related_name='Categories')
 
 
 class New(models.Model):
@@ -28,22 +28,22 @@ class New(models.Model):
 
 
 def get_upload_image_filename(instance, filename):
-    return'images/{0}/{1}/{2}'.format(instance.__class__.__name__, instance.id, filename)
+    return'static/images/{0}/{1}/{2}'.format(instance.__class__.__name__, instance.id, filename)
 
 
 class CenterImages(models.Model):
     image = models.ImageField(upload_to=get_upload_image_filename)
-    center = models.ForeignKey(Center, on_delete=models.CASCADE)
+    center = models.ForeignKey(Center, on_delete=models.CASCADE, related_name='images')
 
 
 class NewImages(models.Model):
     image = models.ImageField(upload_to=get_upload_image_filename)
-    new = models.ForeignKey(New, on_delete=models.CASCADE)
+    new = models.ForeignKey(New, on_delete=models.CASCADE, related_name='images')
 
 
 class ShopImages(models.Model):
     image = models.ImageField(upload_to=get_upload_image_filename)
-    shop = models.ForeignKey(Shop, on_delete=models.CASCADE)
+    shop = models.ForeignKey(Shop, on_delete=models.CASCADE, related_name='images')
 
 
 # Create your models here.

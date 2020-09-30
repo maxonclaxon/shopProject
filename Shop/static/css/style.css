@@ -1,0 +1,9 @@
+.header{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    width: 90%;
+    height: 70px;
+    background-color: rgba(113,113,113,0.5);
+}
