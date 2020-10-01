@@ -77,6 +77,13 @@ body{
     border: 0px solid gray;<!---->
 }
 
+.button_block{
+    width: 100%;
+    height: max-content;
+    text-align: center;
+}
+
+
 .button_inactive{
     color: var(--col1);
     font-size: var(--T1);
@@ -87,7 +94,7 @@ body{
     border-radius: 10px;
 }
 
-.button_inactive{
+.button_active{
     color: white;
     font-size: var(--T1);
     border: 1px solid var(--col1);
@@ -95,4 +102,36 @@ body{
     width: 300px;
     height: 50px;
     border-radius: 10px;
+}
+
+.button:hover{
+    color: white;
+    font-size: var(--T1);
+    border: 1px solid var(--col1);
+    background-color: var(--col1);
+    width: 300px;
+    height: 50px;
+    border-radius: 10px;
+}
+
+.news_element{
+    width: 30%;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid black; <!---->
+}
+
+.news_element_image{
+    height: 40%;
+    width: 75%;
+
+
+}
+.news_element_image>img{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
 }

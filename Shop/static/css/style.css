@@ -1,3 +1,11 @@
-.latest_news button{
+.latest_news>button{
     margin: 0 auto;
+}
+
+.latest_news_elements{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: max-content;
 }
