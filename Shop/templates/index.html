@@ -1,19 +1,35 @@
 <!DOCTYPE html>
-{% load staticfiles %}
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/general.css' %}" />
+
     <title>Универсальный рынок</title>
 </head>
 <body>
     <div class="header">
+        <a><div class="header_item"><span class="header_text">Торговые центры</span></div></a>
         <a><div class="header_item"><span>Торговые центры</span></div></a>
         <a><div class="header_item"><span>Торговые центры</span></div></a>
         <a><div class="header_item"><span>Торговые центры</span></div></a>
         <a><div class="header_item"><span>Торговые центры</span></div></a>
-        <div class="header_item"><div>Время</div><div>Работы</div></div>
-        <div class="header_item"><div>Номер<div>Соцсети</div></div><div>Адрес</div></div>
+        <a><div class="header_item"><span>Торговые центры</span></div></a>
+    </div>
+    <div class="banner">
+
+    </div>
+    <div class="block about">
+        <div class="title"><span>О нас</span></div>
+        <div class="about_description">
+            Тут блок о нас
+        </div>
+    </div>
+    <div class="block latest_news">
+        <div class="title"><span>Последние новости</span></div>
+        <div class="latest_news_items"></div>
+        <button class="button_inactive">Смотреть все новости</button>
     </div>
 </body>
 </html>
